@@ -1,0 +1,80 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,800;1,100;1,300;1,400;1,700&display=swap');
+
+  body{
+    font-family: 'Poppins', sans-serif;
+  }
+
+  nav{
+    display: flex;
+    justify-content: space-between;
+    height: 72px;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap : 24px;
+  }
+
+  button{
+    all : unset;
+    padding: 6px 16px;
+    background : red;
+    height: 24px;
+    color : white;
+    font-weight: 500;
+    border-radius: 5px;
+  }
+
+  *{
+    margin:0
+  }
+  .container {
+    max-width: 1280px;
+    margin : 0 auto;
+  }
+  .hero {
+    display : flex;
+    align-items: center;
+    height: calc(100vh - 72px);
+  }
+
+  .hero h1{
+    font-weight: 800;
+    line-height: 102px;
+    font-size :108px;
+  }
+  .hero p{
+    font-weight: 600;
+    color: gray;
+    max-width: 400px;
+  }
+
+  .hero-content{
+    display: flex;
+    flex-direction: column;
+    gap : 36px;
+  }
+  .hero-button{
+    display : flex;
+    gap : 40px;
+    font-size: 18px;
+  }
+
+  .secondary-button{
+    background: transparent;
+    color: gray;
+    border: 1px solid gray;
+  }
+
+  .shopping p{
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .brand-icons{
+    display: flex;
+    gap :16px;
+  }
