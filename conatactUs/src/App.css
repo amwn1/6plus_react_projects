@@ -1,42 +1,29 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,800;1,100;1,300;1,400;1,700&display=swap');
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+ *{
+    margin : 0;
+ }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
+ body{
+    font-family:"Poppins",sans-serif;
+ }
+ .container{
+    max-width: 1280px;
+    margin: 0 auto;
+ }
 
-.card {
-  padding: 2em;
-}
+ nav{
+    padding: 0 8px;
+    display: flex;
+    height: 72px;
+    align-items: center;
+    justify-content: space-between;
+ }
 
-.read-the-docs {
-  color: #888;
-}
+ nav ul{
+    display: flex;
+    gap: 24px;
+    list-style-type : none;
+    font-weight: 500;
+ }
