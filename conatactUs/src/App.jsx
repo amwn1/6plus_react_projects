@@ -7,11 +7,13 @@ import Navigation from './componenets/Navigation/Navigation'
 
 function App() {
   return (
-    <>
+    <div>
   <Navigation/>
+  <main className="main_container">
   <ContactHeader/>
   <ContactForm/>
-    </>
+  </main>
+    </div>
   )
 }
 

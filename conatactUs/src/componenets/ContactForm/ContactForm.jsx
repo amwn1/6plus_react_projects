@@ -34,11 +34,17 @@ const ContactForm = () => {
               </div>
               <div className={styles.form_control}>
               <label htmlFor="text">Text</label>
-              <input name='text' />
+              <textarea name='text' rows="8" />
+              </div>
+              <div className={styles.submit_btn}>
+              <Button
+            text ="SUBMIT BUTTON" />
               </div>
             </form>
         </div>
-        <div className='styles.contact_image'></div>
+        <div className={styles.contact_image}>
+          <img src="./public/images/contact1.svg" alt="contact image" />
+        </div>
     </section>
   );
 };
