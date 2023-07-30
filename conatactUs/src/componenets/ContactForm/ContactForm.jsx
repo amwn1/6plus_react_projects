@@ -4,7 +4,10 @@ import Button from '../Button/Button'
 import {MdMessage} from "react-icons/md"
 import {FaPhoneAlt} from 'react-icons/fa'
 import {HiMail} from 'react-icons/hi'
+import { useState } from 'react'
 const ContactForm = () => {
+
+ 
   return (
     <section className={styles.container}>
         <div className={styles.contact_form}>
@@ -14,6 +17,7 @@ const ContactForm = () => {
             icon ={<MdMessage fontSize="24" />}
             />
             <Button
+            
             text ="VIA CALL"
             icon ={<FaPhoneAlt fontSize="24"/>}
             />
@@ -23,7 +27,7 @@ const ContactForm = () => {
             text ="VIA EMAIL FORM"
             icon ={<HiMail fontSize="24"/>}
             />
-            <form>
+            <form onSubmit={onSubmit}>
               <div className={styles.form_control}>
               <label htmlFor="name">Name</label>
               <input type="text" name='name' />
@@ -40,10 +44,11 @@ const ContactForm = () => {
               <Button
             text ="SUBMIT BUTTON" />
               </div>
+              {/* <div>{name +" / " + email + " / " +text }</div> */}
             </form>
         </div>
         <div className={styles.contact_image}>
-          <img src="./public/images/contact1.svg" alt="contact image" />
+          <img src="/images/contact1.svg" alt="contact image" />
         </div>
     </section>
   );
