@@ -7,7 +7,20 @@ import {HiMail} from 'react-icons/hi'
 import { useState } from 'react'
 const ContactForm = () => {
 
- 
+  // const [name,setName] = useState("Namaiwa")
+  // const [email,setEmail] = useState("example Mail")
+  // const [text,setText] = useState("example Mail")
+
+  
+
+  // const onSubmit = (event) => {
+  //      event.preventDefault()
+  //     setName(event.target[0].value)
+      
+  //     setEmail(event.target[1].value)
+  //     setText(event.target[2].value)
+  // }
+
   return (
     <section className={styles.container}>
         <div className={styles.contact_form}>
