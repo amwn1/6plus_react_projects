@@ -5,18 +5,44 @@ import styled from 'styled-components'
 import RollDice from './RollDice';
 
 const Gameplay = () => {
+
+  const[score,setScore] = useState(0)
   const [selectedNumber , setSelectedNumber] = useState();
+  const [currentDice , setCurrentDice] = useState(1);
+
+  
+  const generateRandomNumber = (min, max) => {
+    return Math.floor(Math.random() * (max - min) + min);
+} 
+
+
+     const roleDice = () =>{
+        const randomNumber = generateRandomNumber(1,7)
+        setCurrentDice((prev) => randomNumber);
+     if(selectedNumber == randomNumber){
+      setScore((prev) => prev + randomNumber);
+     }
+     else{
+      setScore((prev) => prev - 2);
+     }
+ 
+    }    
 
   return (
       <Main>
       <div className="top_section">
-     <TotalScore/>
+     <TotalScore
+     score={score}
+     />
      <NumberSelector
      selectedNumber={selectedNumber}
      setSelectedNumber={setSelectedNumber}
      />
      </div>
-     <RollDice/>
+     <RollDice
+     roleDice={roleDice}
+     currentDice={currentDice}
+     />
      </Main>
   
   );
