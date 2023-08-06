@@ -1,15 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import TotalScore from './TotalScore'
 import NumberSelector from './NumberSelector'
 import styled from 'styled-components'
 import RollDice from './RollDice';
 
 const Gameplay = () => {
+  const [selectedNumber , setSelectedNumber] = useState();
+
   return (
       <Main>
       <div className="top_section">
      <TotalScore/>
-     <NumberSelector/>
+     <NumberSelector
+     selectedNumber={selectedNumber}
+     setSelectedNumber={setSelectedNumber}
+     />
      </div>
      <RollDice/>
      </Main>

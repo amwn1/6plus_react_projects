@@ -1,9 +1,24 @@
+import { useState } from 'react'
 import styled from 'styled-components'
 
 const RollDice = () => {
+
+  const [currentDice , setCurrentDice] = useState(1);
+
+  const generateRandomNumber = (min, max) => {
+    return Math.floor(Math.random() * (max - min) + min);
+} 
+     const roleDice = () =>{
+        const randomNumber = generateRandomNumber(1,7)
+        setCurrentDice((prev) => randomNumber);
+     }
   return (
     <DiceContainer>
-      <img src="/imgaes/dices/dice_1.png." alt="dice1" />
+      <div className="dice"
+      onClick={roleDice}>
+      <img src={`/images/dices/dice_${currentDice}.png`} alt="dice1" />
+      </div>
+      <p>Click on dice to roll</p>
     </DiceContainer>
   )
 }
@@ -11,5 +26,16 @@ const RollDice = () => {
 export default RollDice
 
 const DiceContainer = styled.div`
-  
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-top: 48px;
+
+   .dice{
+    cursor: pointer;
+   }
+
+   p{
+    font-size: 25px;
+   }
 `
