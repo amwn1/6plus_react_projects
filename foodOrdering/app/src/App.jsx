@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+const BASE_URL = "http://localhost:9000/"
 
 const App = () => {
+
+  const fetchFoodData = async() =>{
+
+  const response = await fetch(BASE_URL)
+  const json = response.json()
+
+  console.log(json);
+  }
+
+  fetchFoodData();
+
+  const[data , setData] = useState(null);
+
   return (
     <Container>
       <TopContainer>
@@ -21,6 +35,13 @@ const App = () => {
         <Button>Lunch</Button>
         <Button>Dinner</Button>
       </FilterContainer>
+
+    <FoodCardContainer>
+      <FoodCards>
+
+      </FoodCards>
+    </FoodCardContainer>
+
     </Container>
   )
 }
@@ -56,7 +77,7 @@ const FilterContainer = styled.section `
   display: flex;
   justify-content: center;
   gap: 12px;
-
+  padding-bottom: 40px;
 `;
 const Button = styled.button `
   background:#ff4343;
@@ -64,4 +85,13 @@ const Button = styled.button `
   padding: 6px 12px;
   border: none;
   color: white;
+`;
+
+const FoodCardContainer = styled.section`
+  height: calc(100vh - 210px) ;
+  background-image: url("/bg.png");
+  background-size: cover;
+`;
+const FoodCards = styled.section`
+  
 `;
