@@ -8,6 +8,7 @@ const App = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const[error,setError] = useState(null)
+  const[filterdata,setFilterData] = useState(null);
 
  
 
@@ -20,6 +21,7 @@ const App = () => {
         const response = await fetch(BASE_URL);
         const json = await response.json();
         setData(json);
+        setFilterData(json);
         setLoading(false);
       } catch (error) {
         setError("Unable to fetch data from the server")
@@ -30,7 +32,14 @@ const App = () => {
 
   },[])
 
-
+     
+  const searchfood = (e) => {
+    const searchValue = e.target.value;
+    console.log(searchValue) ;
+    if(searchValue == ""){
+      setFilterData(null)
+    }
+  }
 
 
   if(error) return <div>{error}</div>
@@ -38,6 +47,7 @@ const App = () => {
 
 
   return (
+    <>
     <Container>
       <TopContainer>
         <div className="logo">
@@ -45,7 +55,7 @@ const App = () => {
         </div>
 
         <div className="search">
-          <input placeholder="Search for meals" />
+          <input onChange={searchfood} placeholder="Search for meals" />
         </div>
       </TopContainer>
 
@@ -56,14 +66,15 @@ const App = () => {
         <Button>Dinner</Button>
       </FilterContainer>
 
-    <SearchResult data = {data} />
     </Container>
+    <SearchResult data = {filterdata} />
+    </>
   );
 };
 
 export default App;
 
-const Container = styled.div`
+ export const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
 `;

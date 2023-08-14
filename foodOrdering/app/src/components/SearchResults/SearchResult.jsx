@@ -1,40 +1,41 @@
-import React from 'react'
-import styled from 'styled-components'
-import { BASE_URL } from '../../App'
-import { Button } from '../../App'
-const SearchResult = ({data}) => {
+import React from "react";
+import styled from "styled-components";
+import { BASE_URL, Container } from "../../App";
+import { Button } from "../../App";
+const SearchResult = ({ data }) => {
   return (
     <FoodCardContainer>
-    <FoodCards>
-      {
-       data?.map(({name , image , text, price}) => (
-        <FoodCard key = {name}>
-          <div className='food_image'>
-            <img src={BASE_URL + image} alt="food image" />
-          </div>
-          <div className="food_info">
-            <div className="info">
-            <h3>{name}</h3>
-            <p>{text}</p>
-            </div>
-            <Button>${price.toFixed(2)}</Button>
-          </div>
-       </FoodCard>) )
-      }
-    </FoodCards>
-  </FoodCardContainer>  )
-}
+      <Container>
+        <FoodCards>
+          {data?.map(({ name, image, text, price }) => (
+            <FoodCard key={name}>
+              <div className="food_image">
+                <img src={BASE_URL + image} alt="food image" />
+              </div>
+              <div className="food_info">
+                <div className="info">
+                  <h3>{name}</h3>
+                  <p>{text}</p>
+                </div>
+                <Button>${price.toFixed(2)}</Button>
+              </div>
+            </FoodCard>
+          ))}
+        </FoodCards>
+      </Container>
+    </FoodCardContainer>
+  );
+};
 
-export default SearchResult
-
+export default SearchResult;
 
 const FoodCardContainer = styled.section`
   height: calc(100vh - 210px);
   background-image: url("/bg.png");
   background-size: cover;
 `;
-const FoodCards = styled.section`
-display: flex;
+const FoodCards = styled.div`
+  display: flex;
   flex-wrap: wrap;
   row-gap: 32px;
   column-gap: 20px;
@@ -43,8 +44,7 @@ display: flex;
   padding-top: 80px;
 `;
 const FoodCard = styled.section`
-
-width: 340px;
+  width: 340px;
   height: 167px;
   border: 0.66px solid;
 
