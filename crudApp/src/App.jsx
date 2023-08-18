@@ -3,7 +3,7 @@ import Navbar from './components/Navbar'
 
 const App = () => {
   return (
-    <div className=" m-4 h-[60px] bg-white">
+    <div className=' max-w-[370px] mx-auto '>
      <Navbar /> 
     </div>
   )
