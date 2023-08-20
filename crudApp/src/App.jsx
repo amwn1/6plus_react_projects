@@ -1,8 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import {BiSearchAlt} from 'react-icons/bi'
 import {AiOutlinePlusCircle} from 'react-icons/ai'
 const App = () => {
+  const [contacts ,setContacts] = useState();
+
+  useEffect(() => {
+
+    const getContacts = async () => {
+      try{
+
+      }
+      catch(error){
+
+      }
+    }
+
+  } )
+
   return (
     <div className=' max-w-[370px] mx-auto px-4'>
      <Navbar /> 
