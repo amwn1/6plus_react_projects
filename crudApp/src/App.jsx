@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import {BiSearchAlt} from 'react-icons/bi'
 import {AiOutlinePlusCircle} from 'react-icons/ai'
+import {collection} from 'firebase/firestore' 
 const App = () => {
   const [contacts ,setContacts] = useState();
 
@@ -9,7 +10,10 @@ const App = () => {
 
     const getContacts = async () => {
       try{
-
+          const contactsRef = collection (db,'contacts')
+          const contactsSnapshot = await getDocs(contactsRef)
+          const contactsList = contactsSnapshot.docs.map((doc) => doc.data())
+        
       }
       catch(error){
 
