@@ -24,12 +24,21 @@ const Sidebarcontainer = styled.aside`
     top:0;
     left:0 ;
     transition: 0.3s ease-in-out;
-    opacity:${({isOpen})=>(isOpen ?'100%' : '0')};
-    top:${({isOpen}) => (isOpen ? '0' : '-100')};
+    /* opacity:${({isOpen})=>(isOpen ?'100%' : '0')};
+    top:${({isOpen}) => (isOpen ? '0' : '-100')}; */
+    top: 0;
 `
 
 const CloseIcon = styled(FaTimes)`
     color: #fff;
 `
 const Icon = styled.div`
+position:absolute;
+top:1.2rem;
+right: 2rem;
+background: transparent;
+font-size: 2rem;
+cursor:pointer;
+outline:none;
+
 `
