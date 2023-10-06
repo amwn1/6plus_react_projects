@@ -117,3 +117,4 @@ text-decoration: none;
     color:#010606;
 }
 ` 
+// Styling the side bar is done
