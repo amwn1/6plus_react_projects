@@ -4,13 +4,13 @@ import { Link as LinkR  } from 'react-router-dom';
 import { Link as LinkS  } from 'react-scroll';
 import {FaBars} from 'react-icons/fa'
 
-const Navbar = () => {
+const Navbar = ({toggle}) => {
   return (
     <>
     <Nav>
       <NavbarContainer>
         <NavLogo to='/'>Dolla</NavLogo>
-        <MobileIcon>
+        <MobileIcon onClick={toggle}>
           <FaBars/>
         </MobileIcon>
         <NavMenu>

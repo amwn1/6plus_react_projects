@@ -13,8 +13,8 @@ const index = () => {
 
   return (
     <>
-    <Sidebar isOpen={isOpen}/>
-    <Navbar />
+    <Sidebar isOpen={isOpen} toggle={toggle}/>
+    <Navbar  toggle={toggle}/>
     </>
   )
 }
