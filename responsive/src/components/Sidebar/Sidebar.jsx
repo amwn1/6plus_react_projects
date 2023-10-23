@@ -6,21 +6,21 @@ import { Link as LinkS  } from 'react-scroll';
 const Sidebar = ({isOpen,toggle}) => {
   return (
     <Sidebarcontainer isOpen={isOpen} onClick={toggle}>
-        <Icon>
+        <Icon >
             <CloseIcon/>
         </Icon>
         <SideBarWrapper>
             <SidebarMenu>
-                <SidebarLink to = "about">
+                <SidebarLink to = "about" onClick={toggle}>
                     About
                 </SidebarLink>
-                <SidebarLink to = "discover">
+                <SidebarLink to = "discover" onClick={toggle}>
                     Discover
                 </SidebarLink>
-                <SidebarLink to = "services">
+                <SidebarLink to = "services" onClick={toggle}>
                     Services
                 </SidebarLink>
-                <SidebarLink to = "signup">
+                <SidebarLink to = "signup" onClick={toggle}>
                     Signup
                 </SidebarLink>
             </SidebarMenu>
