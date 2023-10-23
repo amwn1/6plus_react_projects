@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import Video from '../../videos/video.mp4';
  export const HeroSection = () => {
   return (
     <HeroContainer>
     <HeroBg>
-        < autoPlay loop muted src={Videio} type = 'video/mp4'/>
+        < VideoBg autoPlay loop muted src={Video} type = 'video/mp4'/>
 
         
     </HeroBg>
@@ -35,4 +35,11 @@ export const HeroBg = styled.div`
     width: 100%;
     height: 100%;
     overflow: hidden;
+`
+
+export const VideoBg = styled.video`
+width: 100%;
+height: 100%;
+object-fit: cover;
+
 `
