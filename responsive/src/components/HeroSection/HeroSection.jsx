@@ -6,9 +6,18 @@ import Video from '../../videos/video.mp4';
     <HeroContainer>
     <HeroBg>
         < VideoBg autoPlay loop muted src={Video} type = 'video/mp4'/>
-
-        
     </HeroBg>
+    <HeroContent>
+      <HeroH1>Virtual Banking made easy</HeroH1>
+      <Herop>
+        Sign up for a new account today and recieve $250 in credits towards your next payement.
+      </Herop>
+      <HeroBtnWrapper>
+        <Button to="signup">
+          Get Started {hover?<ArrowForward/>:<ArrowRight/>}1
+        </Button>
+      </HeroBtnWrapper>
+    </HeroContent>
     </HeroContainer>
   )
 }
@@ -43,3 +52,39 @@ height: 100%;
 object-fit: cover;
 
 `
+
+export const HeroContent = styled.div`
+z-index:3;
+max-width: 1200px;
+position: absolute;
+padding: 8px 24px;
+display: flex;
+flex-direction: column;
+align-items: center;
+`
+export const HeroH1 = styled.h1`
+color: #fff;
+font-size : 48px;
+text-align: center;
+
+@media screen and (max-width : 768px){
+  font-size: 40px;
+}
+@media screen and (max-width : 480px){
+  font-size: 32px;
+}
+
+`
+export const Herop = styled.p`
+margin-top: 24px;
+color:#fff;
+font-size:24px;
+text-align: center;
+max-width: 600px;
+
+`
+export const HeroBtnWrapper = styled.div``
+export const Button = styled.button``
+export const ArrowForward = styled.button``
+export const ArrowRight = styled.button``
+
