@@ -82,9 +82,30 @@ font-size:24px;
 text-align: center;
 max-width: 600px;
 
+@media screen and (max-width : 480px){
+  font-size: 24px;
+}
+
+@media screen and (max-width : 480px){
+  font-size: 18px;
+}
+
 `
-export const HeroBtnWrapper = styled.div``
-export const Button = styled.button``
-export const ArrowForward = styled.button``
-export const ArrowRight = styled.button``
+export const HeroBtnWrapper = styled.div`
+margin-top: 32px;
+display: flex;
+flex-direction: column;
+align-items: center;
+`
+export const Button = styled.button`
+
+`
+export const ArrowForward = styled(MdArrowForward)`
+margin-left: 8px;
+font-size: 20px;
+`
+export const ArrowRight = styled(MdKeyboardArrowRight)`
+margin-left: 8px;
+font-size: 20px;
+`
 
